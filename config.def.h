@@ -1,3 +1,5 @@
+#include <X11/XF86keysym.h>
+
 /* Taken from https://github.com/djpohly/dwl/issues/466 */
 #define COLOR(hex)    { ((hex >> 24) & 0xFF) / 255.0f, \
                         ((hex >> 16) & 0xFF) / 255.0f, \
@@ -124,9 +126,25 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 static const char *termcmd[] = { "foot", NULL };
 static const char *menucmd[] = { "wmenu-run", NULL };
 
+/* Volume commands */
+static const char *upvol[]   = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%+",      NULL };
+static const char *downvol[] = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%-",      NULL };
+static const char *mutevol[] = { "wpctl", "set-mute",   "@DEFAULT_AUDIO_SINK@", "toggle",   NULL };
+
+/* Brightness commands */
+static const char *brupcmd[]   = { "light", "-A", "5", NULL };
+static const char *brdowncmd[] = { "light", "-U", "5", NULL };
+
 static const Key keys[] = {
 	/* Note that Shift changes certain key codes: 2 -> at, etc. */
 	/* modifier                  key                  function          argument */
+	{ 0,                 XF86XK_AudioRaiseVolume,   spawn,          {.v = upvol} },
+    	{ 0,                 XF86XK_AudioLowerVolume,   spawn,          {.v = downvol} },
+    	{ 0,                 XF86XK_AudioMute,          spawn,          {.v = mutevol} },
+
+	{ 0,                    XF86XK_MonBrightnessUp,    spawn,       {.v = brupcmd} },
+	{ 0,                    XF86XK_MonBrightnessDown,  spawn,       {.v = brdowncmd} },
+
 	{ MODKEY,                    XKB_KEY_d,           spawn,            {.v = menucmd} },
 	{ MODKEY,					 XKB_KEY_Return,      spawn,            {.v = termcmd} },
 	{ MODKEY,                    XKB_KEY_j,           focusstack,       {.i = +1} },

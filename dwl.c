@@ -63,7 +63,7 @@
 #include <wlr/util/region.h>
 #include <xkbcommon/xkbcommon.h>
 #ifdef XWAYLAND
-#include <wlr/xwayland.h>
+#include <wlr/xwayland/xwayland.h>
 #include <xcb/xcb.h>
 #include <xcb/xcb_icccm.h>
 #endif
