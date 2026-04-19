@@ -135,6 +135,9 @@ static const char *mutevol[] = { "wpctl", "set-mute",   "@DEFAULT_AUDIO_SINK@", 
 static const char *brupcmd[]   = { "light", "-A", "5", NULL };
 static const char *brdowncmd[] = { "light", "-U", "5", NULL };
 
+static const char *cursor_theme            = "Adwaita";
+static const char cursor_size[]            = "24"; /* Make sure it's a valid integer, otherwise things will break */
+
 static const Key keys[] = {
 	/* Note that Shift changes certain key codes: 2 -> at, etc. */
 	/* modifier                  key                  function          argument */
