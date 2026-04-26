@@ -1,11 +1,12 @@
 # dwl - dwm for Wayland
 
-2025-08-16:  
-dwl IS CURRENTLY UN-MAINTAINED.  
-AT THE PRESENT TIME, I (@fauxmight) DO NOT HAVE  
-THE TIME OR CAPACITY TO KEEP UP WITH [wlroots] CHANGES.  
-IF YOU ARE INTERESTED IN TAKING ON LEAD DEVELOPER RESPONSIBILITIES,  
-SEE ISSUE [#1166](https://codeberg.org/dwl/dwl/issues/1166).
+Based on 0.8 but with the following
+- Added my own muscle memory shortcuts
+- Patches for cursortheme, ipc, and vanity gaps
+
+I usually start it with an alias like alias dwl_start='dwl -s ~/.config/dwl/autostart.sh' to have other scripts run after. 
+
+Rest of OG readme below
 ---
 
 Join us on our IRC channel: [#dwl on Libera Chat]  
