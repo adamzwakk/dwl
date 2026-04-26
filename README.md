@@ -4,7 +4,7 @@ Based on 0.8 but with the following
 - Added my own muscle memory shortcuts
 - Patches for cursortheme, ipc, and vanity gaps
 
-I usually start it with an alias like alias dwl_start='dwl -s ~/.config/dwl/autostart.sh' to have other scripts run after. 
+I usually start it with an alias like alias `dwl_start='dwl -s ~/.config/dwl/autostart.sh'` to have other scripts run after. 
 
 Rest of OG readme below
 ---
